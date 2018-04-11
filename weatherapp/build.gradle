@@ -1,0 +1,27 @@
+apply from: "versions.gradle"
+
+buildscript {
+    apply from: "versions.gradle"
+
+    repositories {
+        //TODO HotSpot Repo
+        // maven { url "https://..." }
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        //TODO HotSpot Repo
+        // maven { url "https://..." }
+        mavenLocal()
+        jcenter()
+        google()
+    }
+}
+
