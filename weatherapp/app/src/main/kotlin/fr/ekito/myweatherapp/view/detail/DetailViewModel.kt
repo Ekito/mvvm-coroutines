@@ -25,7 +25,7 @@ class DetailViewModel(
             try {
                 val detail = weatherRepository.getWeatherDetail(id).await()
                 mStates.value = WeatherDetailState(detail)
-            } catch (error: Exception) {
+            } catch (error: Throwable) {
                 mStates.value = ErrorState(error)
             }
         }

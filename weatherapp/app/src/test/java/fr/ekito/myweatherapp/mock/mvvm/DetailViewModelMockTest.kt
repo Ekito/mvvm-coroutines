@@ -65,7 +65,7 @@ class DetailViewModelMockTest {
         val error = Throwable("Got error")
         val id = "ID"
 
-        given(repository.getWeatherDetail(id)).will { error }
+        given(repository.getWeatherDetail(id)).will { throw error }
 
         viewModel.getDetail(id)
 

@@ -36,7 +36,7 @@ class WeatherViewModel(
             try {
                 val weather = weatherRepository.getWeather(newLocation).await()
                 mStates.value = WeatherListState.from(weather)
-            } catch (error: Exception) {
+            } catch (error: Throwable) {
                 mEvents.value = LoadLocationFailedEvent(newLocation, error)
             }
         }
@@ -51,7 +51,7 @@ class WeatherViewModel(
             try {
                 val weather = weatherRepository.getWeather().await()
                 mStates.value = WeatherListState.from(weather)
-            } catch (error: Exception) {
+            } catch (error: Throwable) {
                 mStates.value = ErrorState(error)
             }
         }

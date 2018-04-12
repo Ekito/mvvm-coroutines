@@ -29,7 +29,7 @@ class SplashViewModel(
             try {
                 weatherRepository.getWeather().await()
                 mEvents.value = SuccessEvent
-            } catch (error: Exception) {
+            } catch (error: Throwable) {
                 mEvents.value = FailedEvent(error)
             }
         }
